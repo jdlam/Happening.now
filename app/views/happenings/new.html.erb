@@ -1,0 +1,21 @@
+<h2>New Happening</h2>
+
+<form class="create-happening" action="index.html" method="post">
+  <input type="text" name="happening[name]" placeholder="name">
+  <br />
+  <input type="text" name="happening[description]" placeholder="description">
+  <br />
+  <input type="text" id="address" name="happening[address]" placeholder="address">
+  <br />
+  <input type="text" id="city" name="happening[city]" placeholder="city">
+  <br />
+  <input type="text" id="state" name="happening[state]" placeholder="state">
+  <br />
+  <input type="text" name="happening[longitude]" placeholder="latitude" readonly>
+  <br />
+  <input type="text" name="happening[latitude]" placeholder="longitude" readonly>
+  <br />
+  <input type="submit" name="Submit" value="create!">
+</form>
+
+<%= javascript_include_tag 'latLngForm', 'data-turbolinks-track' => true %>

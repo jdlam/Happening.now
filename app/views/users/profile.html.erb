@@ -1,0 +1,35 @@
+<input type="hidden" id="api-token" value="<%= @user.token %>">
+
+<h3>Welcome Back <%= @user.username %></h3>
+
+<%= link_to "Front Page", home_path %>
+<%= button_to "Log Out", '/sessions', method: :delete %>
+
+<h2>New Happening</h2>
+
+<form class="create-happening" action="index.html" method="post">
+  <input type="text" id="name" name="happening[name]" placeholder="name">
+  <br />
+  <input type="text" id="description" name="happening[description]" placeholder="description">
+  <br />
+  <input type="text" id="address" name="happening[address]" placeholder="address">
+  <br />
+  <input type="text" id="city" name="happening[city]" placeholder="city">
+  <br />
+  <input type="text" id="state" name="happening[state]" placeholder="state">
+  <br />
+  <input type="text" name="happening[longitude]" placeholder="latitude" readonly>
+  <br />
+  <input type="text" name="happening[latitude]" placeholder="longitude" readonly>
+  <br />
+  <input type="submit" name="Submit" value="create!">
+</form>
+
+<ul id="happening-list">
+
+</ul>
+
+<%= javascript_include_tag 'happeningBackbone', 'data-turbolinks-track' => true %>
+
+
+<%= javascript_include_tag 'latLngForm', 'data-turbolinks-track' => true %>

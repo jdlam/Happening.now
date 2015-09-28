@@ -1,0 +1,14 @@
+<h2>All the Happenings</h2>
+
+<% if current_user %>
+  <%= button_to "New Happening", new_happening_path, method: :get %>
+  <%= button_to "Log Out", '/sessions', method: :delete %>
+<% else %>
+  <%= button_to "Login", login_path, method: :get %>
+<% end %>
+
+<ul>
+  <% @happenings.each do |happening| %>
+    <li><%= happening.name %> - <%= happening.description %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HappeningNow</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script type="text/template" id="happening-template">
+    <h3><%%= name %></h3>
+    <span><%%= description %></span>
+    <button type="button" class="remove">X</button>
+  </script>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

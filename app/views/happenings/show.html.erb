@@ -1,0 +1,5 @@
+<h2><%= @happening.name %> is Happening!!</h2>
+
+
+<%= button_to "Update Happening", edit_happening_path(@happening), method: get %>
+<%= button_to "Delete Happening", happening_path(@happening), method: delete %>
