@@ -1,7 +1,7 @@
 class Api::HappeningsController < ApplicationController
 
   include Api::HappeningsHelper
-  before_action :current_api_user!, except: [:showall]
+  before_action :current_api_user!, except: [:show, :showall]
 
   def index
     render json: @current_user.happenings.all
@@ -17,7 +17,7 @@ class Api::HappeningsController < ApplicationController
   end
 
   def show
-    render json: @current_user.happenings.find_by(params[:id])
+    render json: Happening.find(params[:id])
   end
 
   def update

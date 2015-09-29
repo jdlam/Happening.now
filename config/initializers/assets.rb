@@ -11,3 +11,5 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( happeningBackbone.js )
 Rails.application.config.assets.precompile += %w( latLngForm.js )
+Rails.application.config.assets.precompile += %w( frontPageBackbone.js )
+Rails.application.config.assets.precompile += %w( map.js )

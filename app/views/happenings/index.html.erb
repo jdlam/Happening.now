@@ -1,14 +1,39 @@
 <h2>All the Happenings</h2>
 
-<% if current_user %>
-  <%= button_to "New Happening", new_happening_path, method: :get %>
-  <%= button_to "Log Out", '/sessions', method: :delete %>
-<% else %>
-  <%= button_to "Login", login_path, method: :get %>
-<% end %>
+<div class="navbar">
+  <% if current_user %>
+    <%= link_to "New Happening", new_happening_path %>
+    <%= link_to "Profile", '/users/profile'%>
+    <%= link_to "Log Out", '/sessions', method: :delete %>
+  <% else %>
+    <%= link_to "Login", login_path %>
+    <div class="login">
+      <%= form_tag '/sessions', method: :post do %>
+        <%= label_tag :username %>
+        <%= text_field_tag :username %>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+        <%= submit_tag "Log In" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
-<ul>
+<div id="content" class="row">
+  <div id="happenings" class="col-sm-6">
+    <ul id="happening-list">
+    </ul>
+  </div>
+  <div id="map-canvas" class="col-sm-6">
+  </div>
+</div>
+
+
+<%= javascript_include_tag 'frontPageBackbone', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'map', 'data-turbolinks-track' => true %>
+
+<!-- <ul>
   <% @happenings.each do |happening| %>
     <li><%= happening.name %> - <%= happening.description %></li>
   <% end %>
-</ul>
+</ul> -->
