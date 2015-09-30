@@ -1,34 +1,39 @@
 <input type="hidden" id="api-token" value="<%= @user.token %>">
 
-<h3>Welcome Back <%= @user.username %></h3>
+<h3 id="welcome-user">Welcome Back <%= @user.username %></h3>
 
-<h2>New Happening</h2>
 
-<form class="create-happening" action="index.html" method="post">
-  <select id="event_type" name="happening[event_type]">
-    <option value="food">Food</option>
-    <option value="music">Music</option>
-    <option value="performer">Performers</option>
-    <option value="accident">Accident</option>
-    <option value="wtf">wtf?</option>
-  </select>
-  <br />
-  <input type="text" id="name" name="happening[name]" placeholder="name">
-  <br />
-  <input type="text" id="description" name="happening[description]" placeholder="description">
-  <br />
-  <input type="text" id="address" name="happening[address]" placeholder="address">
-  <br />
-  <input type="text" id="city" name="happening[city]" placeholder="city">
-  <br />
-  <input type="text" id="state" name="happening[state]" placeholder="state">
-  <br />
-  <input type="submit" name="Submit" value="create!">
-</form>
+<div id="content">
+  <div id="new">
+    <h2>New Happening?</h2>
 
-<ul id="happening-list">
+    <form class="create-happening" action="index.html" method="post">
+      <select id="event_type" name="happening[event_type]">
+        <option value="food">Food</option>
+        <option value="music">Music</option>
+        <option value="performer">Performers</option>
+        <option value="accident">Accident</option>
+        <option value="wtf">wtf?</option>
+      </select>
+      <br />
+      <input type="text" id="name" name="happening[name]" placeholder="name">
+      <br />
+      <input type="text" id="description" name="happening[description]" placeholder="description">
+      <br />
+      <input type="text" id="address" name="happening[address]" placeholder="address">
+      <br />
+      <input type="text" id="city" name="happening[city]" placeholder="city">
+      <br />
+      <input type="text" id="state" name="happening[state]" placeholder="state">
+      <br />
+      <input type="submit" name="Submit" value="create!">
+    </form>
+  </div>
 
-</ul>
+  <ul id="happening-list">
+  </ul>
+
+</div>
 
 <%= javascript_include_tag 'happeningBackbone', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'latLngForm', 'data-turbolinks-track' => true %>

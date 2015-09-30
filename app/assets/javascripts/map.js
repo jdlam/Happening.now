@@ -4,7 +4,6 @@ var pos = {};
 $(document).ready(function(){
   console.log('map loaded');
   initMap();
-  bindListeners();
   bindCenter();
 });
 
@@ -31,17 +30,9 @@ function initMap() {
 	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
 
-function bindListeners() {
-  $('.happening').on('click', function(){
-    alert('clicked');
-    console.log("id: " + $(this).find('.happening-id').val());
-  })
-}
-
 function generateMarker(data) {
   clearMarkers();
 	var infowindow = new google.maps.InfoWindow();
-  console.log(data);
 
 	var contentString = '<div class="markerPop">' +
 		'<strong>' + data.name.toUpperCase() + '</strong>' +
