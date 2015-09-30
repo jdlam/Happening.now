@@ -2,7 +2,7 @@
 
 The new way to keep up to date with events in the area. Big or small, planned or impromptu, if you have a few hours to kill, this is the best way to spend your time. Never live a dull moment!
 
-![Browser Version](http://i.imgur.com/fR02BCa.png)
+![Browser Version](http://i.imgur.com/HwH7OjX.png)
 
 # User Flow
 
@@ -20,11 +20,13 @@ When a user first loads onto the page, the app will first check whether or not t
 
 I wanted to keep the app as minimalistic as possible, taking out unnecessary pages and content where possible. I made the layout simple, having the logo and the navbar at the top, and then two large boxes with content, side by side, as the bulk of the page. For mobiles, the content boxes are stacked on top of each other, and resized accordingly.
 
+![Mobile Version](http://i.imgur.com/PsKCiXq.png)
+
 Everything is done from 2 pages, the index page, and the profile page. If you're not logged in, then you can only access the index page. The app still allows users who have not registered to access any events that registered users have already added to the map.
 
-![Mobile Version](http://i.imgur.com/9ADUTg6.png)
+As for the app itself, the map is rendered through the google maps api. The happening listings are rendered through backbone, so when you create a new happening, it will show up in the list automatically
 
-![Mobile Version with Menu](http://i.imgur.com/skqmPxa.png)
+![Mobile Version with Menu](http://i.imgur.com/8gT35Ak.png)
 
 # Technologies Used
   - HTML
@@ -33,3 +35,7 @@ Everything is done from 2 pages, the index page, and the profile page. If you're
   - jQuery
   - Ruby on Rails
   - Backbone.js
+
+# Notes
+Author: Jonathan Lam
+Last Updated: 9/30/15
