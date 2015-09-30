@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happening.Now</title>
+  <title>What's Happening Now??</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr-O0eDDPvqhR0sdtBV4leSi1pvxNcZ6w">
   </script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <script type="text/template" id="happening-template">
-    <div class="">
-      <h3><%%= name %></h3>
-      <span><%%= description %></span>
+    <img src="/images/<%%= event_type %>.png" alt="" class="icon" />
+    <div class="event-content">
       <button type="button" class="remove">X</button>
+      <h3><%%= name %></h3>
+      <br />
+      <span><%%= description %></span>
     </div>
   </script>
   <script type="text/template" id="front-page-template">
-    <div class="event">
-      <input type="hidden" class="happening-id" value="<%%= id %>">
+    <input type="hidden" class="happening-id" value="<%%= id %>">
+    <img src="/images/<%%= event_type %>.png" alt="" class="icon" />
+    <div class="event-content">
       <h3><%%= name %></h3>
       <span><%%= description %></span>
     </div>
   </script>
 </head>
 <body>
-  <div class="container">
+  <span id="title"><a href="/">Happening.Now</a></span>
+
+  <div class="navbar">
+    <%= link_to "Happening Now!", '/' %>
+    <% if current_user %>
+      <%= link_to "New Happening", '/users/profile' %>
+      <%= link_to "Manage", '/users/profile' %>
+      <%= link_to "Log Out", '/sessions', method: :delete %>
+    <% else %>
+      <%= link_to "Login", login_path %>
+      <div class="login">
+        <%= form_tag '/sessions', method: :post do %>
+          <%= label_tag :username %>
+          <%= text_field_tag :username %>
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+          <%= submit_tag "Log In" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="body">
     <%= yield %>
   </div>
 </body>

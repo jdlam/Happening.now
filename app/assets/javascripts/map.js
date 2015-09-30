@@ -1,4 +1,4 @@
-var markerThing = [];
+var markersArray = [];
 var pos = {};
 
 $(document).ready(function(){
@@ -32,8 +32,9 @@ function initMap() {
 }
 
 function bindListeners() {
-  $('.event').on('click', function(){
-    console.log("id: " + $(this).closest('.happening-id').val());
+  $('.happening').on('click', function(){
+    alert('clicked');
+    console.log("id: " + $(this).find('.happening-id').val());
   })
 }
 
@@ -59,7 +60,7 @@ function generateMarker(data) {
 		title: 'happening',
 		animation: google.maps.Animation.DROP
 	});
-  markerThing.push(marker);
+  markersArray.push(marker);
 
 	marker.addListener('click', function () {
 		infowindow.setContent(contentString);
@@ -72,19 +73,19 @@ function generateMarker(data) {
 
 	//  Fit these bounds to the map
   bounds.extend(myLatLng);
-	map.fitBounds(bounds);
-  map.setZoom(14);
+  map.fitBounds(bounds);
+  map.setZoom(13);
 }
 
 function clearMarkers() {
-  for (var i=0; i<markerThing.length; i++) {
-    markerThing[i].setMap(null);
+  for (var i=0; i<markersArray.length; i++) {
+    markersArray[i].setMap(null);
   }
-  markerThing.length = 0;
+  markersArray.length = 0;
 }
 
 function calculateCenter() {
-	center = pos;
+	center = map.getCenter();
 }
 
 function bindCenter() {

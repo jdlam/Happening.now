@@ -33,13 +33,16 @@ function getInfo(fullAddress) {
 function extractData(data) {
   latitudeVal = data.results[0].geometry.location.lat;
   longitudeVal = data.results[0].geometry.location.lng;
+  var type = $('#event_type').val();
   var streetVal = $("#address").val();
   var cityVal = $("#city").val();
   var stateVal = $("#state").val();
   var nameVal = $("#name").val();
   var descriptionVal = $("#description").val();
+
   var happeningObject = {
     happenings: {
+      event_type: type,
       name: nameVal,
       description: descriptionVal,
       address: streetVal,
@@ -59,6 +62,16 @@ function createHappening(data) {
     data: data,
     success: function(data) {
       happenings.fetch();
+      clearForm();
     }
   })
+}
+
+function clearForm() {
+  console.log('clearing...');
+  $('#name').val('');
+  $('#description').val('');
+  $('#address').val('');
+  $('#city').val('');
+  $('#state').val('');
 }

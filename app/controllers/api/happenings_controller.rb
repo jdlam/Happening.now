@@ -34,7 +34,7 @@ class Api::HappeningsController < ApplicationController
   private
 
   def happening_params
-    params.require(:happenings).permit(:name, :description, :address, :city, :state, :latitude, :longitude)
+    params.require(:happenings).permit(:name, :description, :address, :city, :state, :latitude, :longitude, :event_type)
   end
 
 end
