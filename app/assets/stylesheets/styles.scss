@@ -1,0 +1,221 @@
+// $background: #FFF182;
+$background: #eee;
+$paleYellow: #FFFCE0;
+$purple: #C3BAD4;
+$purple2: #9B98B8;
+$purple3: #b118c8;
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+// General layout
+
+html, body {
+  background-color: $background;
+  height: 100%;
+  width: auto;
+  margin: 0;
+}
+
+#title {
+  margin: 25px;
+  font-size: 3em;
+  text-decoration: none;
+  color: black;
+}
+
+#title > a {
+  text-decoration: none;
+  color: black;
+}
+
+div.body {
+  margin: 0 0;
+}
+
+// Navbar styling
+
+.navbar {
+  width: 100%;
+  background-color: $purple;
+  text-align: center;
+}
+
+.navbar > a {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 10px 17px;
+  text-decoration: none;
+  color: $purple2;
+  &:hover {
+    background-color: $purple2;
+    color: $purple3;
+    text-shadow: 0px 0px 10px #fff;
+  }
+}
+
+div#login-form, div#signup-form {
+  padding: 10px;
+}
+
+// Body stuff
+
+#content {
+  position: relative;
+  height: 400px;
+  width: 800px;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+#map-canvas, #new {
+  vertical-align: top;
+  height: 100%;
+  width: 400px;
+  display: inline-block;
+}
+
+#new {
+  text-align: center;
+}
+
+// Profile page specific
+
+#welcome-user {
+  padding: 0 50px;
+}
+
+form.create-happening > input, select, option {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 1.4em;
+}
+
+select {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+// Happenings
+
+#happenings {
+  height: 100%;
+  width: auto;
+  display: inline-block;
+  overflow: scroll;
+}
+
+// Happenings styling
+
+ul#happening-list {
+  vertical-align: top;
+  height: 400px;
+  width: 400px;
+  margin: 0;
+  padding: 0 40px;
+  display: inline-block;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+}
+
+ul#happening-list > div.happening {
+  border-bottom: 1px solid $purple2;
+}
+
+ul#happening-list > div.happening:last-child {
+  border: none
+}
+
+div.happening {
+  display: block;
+  height: 70px;
+}
+
+img.icon {
+  height: auto;
+  width: 50px;
+  margin-top: 10px;
+  float: left;
+  display: inline-block;
+}
+
+div.event {
+  height: 70px;
+}
+
+div.event-content {
+  padding: 4px 0 0 10px;
+  width: 268px;
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+
+div.event-content > h3 {
+  margin: 0;
+  font-size: 1.5em;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div.event-content > span {
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button.remove {
+  position: absolute;
+  top: -5px;
+  left: -10px;
+}
+
+
+// Media Queries
+
+@media screen and (max-width: 600px) {
+  div.navbar > a {
+    padding: 10px auto;
+  }
+  div.body {
+    width: 100%;
+    height: 600px;
+  }
+  div#content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  ul#happening-list {
+    display: block;
+    width: 100%;
+    height: 25%;
+  }
+  #map-canvas {
+    display: block;
+    width: 100%;
+    height: 75%;
+  }
+  div#new {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0 0 40px 0;
+  }
+  div.happening {
+    height: 80px;
+  }
+}
