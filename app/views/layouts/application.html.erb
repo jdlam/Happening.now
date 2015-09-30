@@ -34,15 +34,15 @@
   <span id="title"><a href="/">Happening.Now</a></span>
 
   <div class="navbar">
-    <%= link_to "Happening Now!", '/', class: "left" %>
+    <%= link_to "Happening Now!", '/' %>
     <% if current_user %>
-      <%= link_to "New Happening", '/users/profile', class: "left" %>
-      <%= link_to "Manage", '/users/profile', class: "left" %>
-      <%= link_to "Log Out", '/sessions', method: :delete, class: "right" %>
+      <%= link_to "New Happening", '/users/profile' %>
+      <%= link_to "Manage", '/users/profile' %>
+      <%= link_to "Log Out", '/sessions', method: :delete %>
     <% else %>
-      <%= link_to "Login", login_path, class: "right" %>
-      <div class="login right">
-        <%= form_tag '/sessions', method: :post do %>
+      <%= link_to "Login", login_path, id: 'login-button' %>
+      <div id="login-form">
+        <%= form_tag '/sessions', class: "login", method: :post do %>
           <%= label_tag :username %>
           <%= text_field_tag :username %>
           <%= label_tag :password %>
