@@ -5,6 +5,7 @@ class HappeningsController < ApplicationController
   # GET    /happenings(.:format)          happenings#index
   def index
     @happenings = Happening.all
+    @user = User.new
   end
 
   # POST   /happenings(.:format)          happenings#create

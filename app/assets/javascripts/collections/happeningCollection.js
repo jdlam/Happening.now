@@ -4,5 +4,8 @@ var app = app || {};
 
 app.HappeningCollection = Backbone.Collection.extend({
   model: app.Happening,
-  url: '/api/happenings'
+  url: '/api/happenings',
+  initialize: function(){
+    this.sort_order = 'desc';
+  }
 });

@@ -41,6 +41,7 @@
       <%= link_to "Log Out", '/sessions', method: :delete %>
     <% else %>
       <%= link_to "Login", login_path, id: 'login-button' %>
+      <%= link_to "Sign Up", new_user_path, id: 'signup-button' %>
       <div id="login-form">
         <%= form_tag '/sessions', class: "login", method: :post do %>
           <%= label_tag :username %>
@@ -48,6 +49,15 @@
           <%= label_tag :password %>
           <%= password_field_tag :password %>
           <%= submit_tag "Log In" %>
+        <% end %>
+      </div>
+      <div id="signup-form">
+        <%= form_for @user do |f| %>
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%= f.submit %>
         <% end %>
       </div>
     <% end %>

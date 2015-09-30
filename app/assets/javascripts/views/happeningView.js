@@ -16,6 +16,14 @@ app.HappeningView = Backbone.View.extend({
   removeHappening: function(){
     this.model.destroy();
     this.$el.remove();
+  },
+  comparator: function(activity) {
+    var date = new Date(activity.get('created_at'));
+    return this.sort_order == 'desc' ? -date.getTime() : date.getTime()
+  },
+  reverse: function() {
+    this.sort_order = this.sort_order = 'desc' ? 'asc' : 'desc';
+    this.sort();
   }
 
 });
