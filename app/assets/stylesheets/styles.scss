@@ -12,6 +12,10 @@ $purple3: #b118c8;
 
 // General layout
 
+html {
+  overflow: auto;
+}
+
 html, body {
   background-color: $background;
   height: 100%;
@@ -24,6 +28,7 @@ html, body {
   font-size: 3em;
   text-decoration: none;
   color: black;
+  height: 65px;
 }
 
 #title > a {
@@ -186,12 +191,16 @@ button.remove {
 // Media Queries
 
 @media screen and (max-width: 600px) {
+  html {
+    overflow: hidden;
+  }
   div.navbar > a {
     padding: 10px auto;
   }
   div.body {
     width: 100%;
-    height: 600px;
+    height: 100%;
+    padding-bottom: 65px;
   }
   div#content {
     width: 100%;
