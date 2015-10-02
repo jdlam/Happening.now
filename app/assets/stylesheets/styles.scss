@@ -224,9 +224,12 @@ button.remove {
     padding: 10px auto;
   }
   div.body {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    padding-bottom: 65px;
+    padding-top: 65px;
   }
   div#content {
     width: 100%;
