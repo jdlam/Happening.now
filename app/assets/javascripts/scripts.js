@@ -5,11 +5,8 @@ function checkWidth() {
 
   if (window.matchMedia("(max-width:600px)").matches) {
     $('#navbar').removeClass('showNav').addClass('hideNav');
-    removeTitleListener();
-    bindTitleListener();
   } else {
     $('#navbar').removeClass('hideNav').addClass('showNav');
-    removeTitleListener();
   }
 }
 
@@ -25,10 +22,6 @@ function bindTitleListener() {
         $('#navbar').delay(1000).removeClass('showNav').addClass('hideNav');
       }
   });
-}
-
-function removeTitleListener() {
-  $('#title').off('click');
 }
 
 function bindLoginListener() {
@@ -73,6 +66,7 @@ function checkHappeningList() {
 
 $(document).ready(function(){
   checkWidth();
+  bindTitleListener();
   bindLoginListener();
   bindSignupListener();
   checkHappeningList();
