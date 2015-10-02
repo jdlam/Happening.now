@@ -249,9 +249,6 @@ button.remove {
 // Media Queries
 
 @media screen and (max-width: 600px) {
-  html {
-    overflow: hidden;
-  }
   div > a {
     padding: 10px auto;
   }
