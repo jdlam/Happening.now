@@ -17,7 +17,6 @@ function bindTitleListener() {
   $('#title').on('click', function(e) {
       e.preventDefault();
       if($('#navbar').hasClass('hideNav')) {
-        console.log('has hideNav');
         $('#navbar').removeClass('hideNav').addClass('showNav');
         $('#login-form').removeClass('show').addClass('hidden');
         $('#signup-form').removeClass('show').addClass('hidden');
@@ -60,13 +59,11 @@ function bindSignupListener() {
 
 function checkHappeningList() {
   if ($('ul#happening-list:empty').length < 1) {
-    console.log('empty')
     var notice = $('<h1>').attr('class', 'notice').text("You haven't created");
     var notice2 = $('<h1>').attr('class', 'notice').text("any events");
 
     $('#happening-list').append(notice).append(notice2);
   } else {
-    console.log('not empty')
     $('.notice').remove();
   }
 }
@@ -75,7 +72,6 @@ function checkHappeningList() {
 
 
 $(document).ready(function(){
-  console.log('working');
   checkWidth();
   bindLoginListener();
   bindSignupListener();

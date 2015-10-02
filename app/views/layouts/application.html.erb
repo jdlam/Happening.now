@@ -37,7 +37,6 @@
     <%= link_to "Happening Now!", '/' %>
     <% if current_user %>
       <%= link_to "New Happening", '/users/profile' %>
-      <%= link_to "Manage", '/users/profile' %>
       <%= link_to "Log Out", '/sessions', method: :delete %>
     <% else %>
       <%= link_to "Login", '/', id: 'login-button' %>
@@ -46,8 +45,10 @@
         <%= form_tag '/sessions', class: "login", method: :post do %>
           <%= label_tag :username %>
           <%= text_field_tag :username %>
+          <br class="break" />
           <%= label_tag :password %>
           <%= password_field_tag :password %>
+          <br class="break" />
           <%= submit_tag "Log In" %>
         <% end %>
       </div>
@@ -55,8 +56,10 @@
         <%= form_for @user do |f| %>
           <%= f.label :username %>
           <%= f.text_field :username %>
+          <br class="break" />
           <%= f.label :password %>
           <%= f.password_field :password %>
+          <br class="break" />
           <%= f.submit %>
         <% end %>
       </div>

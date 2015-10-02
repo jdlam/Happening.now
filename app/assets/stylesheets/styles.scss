@@ -23,6 +23,10 @@ html, body {
   margin: 0;
 }
 
+.break {
+  display: none;
+}
+
 #title {
   margin: 25px;
   font-size: 3em;
@@ -213,39 +217,6 @@ button.remove {
   left: -9px;
 }
 
-// .hidden {
-//   -webkit-animation: 1s;
-//   -webkit-animation-name: hide;
-//   -webkit-animation-timing-function: ease-in-out;
-//   -webkit-animation-iteration-count: 1;
-// }
-//
-// .shown {
-//   -webkit-animation: 1s;
-//   -webkit-animation-name: show;
-//   -webkit-animation-timing-function: ease-in-out;
-//   -webkit-animation-iteration-count: 1;
-// }
-
-@-webkit-keyframes hide {
-  0% {
-    -webkit-transform: translateY(0%);
-  }
-  100% {
-    -webkit-transform: translateY(43px);
-  }
-}
-
-@-webkit-keyframes show {
-  0% {
-    -webkit-transform: translateY(-43px);
-  }
-  100% {
-    -webkit-transform: translateY(0%);
-  }
-}
-
-
 // Media Queries
 
 @media screen and (max-width: 600px) {
@@ -261,6 +232,13 @@ button.remove {
     width: 100%;
     height: 100%;
     margin: 0;
+  }
+  .break {
+    display: block;
+  }
+
+  .show {
+    height: 80px;
   }
 
   ul#happening-list {
