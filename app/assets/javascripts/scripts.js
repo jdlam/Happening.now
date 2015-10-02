@@ -11,7 +11,9 @@ function checkWidth() {
 }
 
 function bindTitleListener() {
+  console.log('binded');
   $('#title').on('click', function(e) {
+      console.log('click');
       e.preventDefault();
       if($('#navbar').hasClass('hideNav')) {
         $('#navbar').removeClass('hideNav').addClass('showNav');
