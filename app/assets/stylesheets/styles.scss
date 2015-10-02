@@ -42,13 +42,15 @@ div.body {
 
 // Navbar styling
 
-.navbar {
+#navbar {
   width: 100%;
+  // height: 42px;
   background-color: $purple;
   text-align: center;
+  // -webkit-transition: height 1s ease-in-out;
 }
 
-.navbar > a {
+#navbar > a {
   display: inline-block;
   width: auto;
   height: auto;
@@ -62,8 +64,32 @@ div.body {
   }
 }
 
-div#login-form, div#signup-form {
-  padding: 10px;
+.show {
+  height: 42px;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: height 0.5s, visibility 1s, opacity 1s ease-in-out;
+}
+
+.hidden {
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: height 0.5s, visibility 0.3s, opacity 0.3s ease-in-out;
+}
+
+.showNav {
+  height: 42px;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: height 0.5s, visibility 1s, opacity 1s ease-in-out;
+}
+
+.hideNav {
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: height 0.5s, visibility 0.3s, opacity 0.3s ease-in-out;
 }
 
 // Body stuff
@@ -187,6 +213,38 @@ button.remove {
   left: -9px;
 }
 
+// .hidden {
+//   -webkit-animation: 1s;
+//   -webkit-animation-name: hide;
+//   -webkit-animation-timing-function: ease-in-out;
+//   -webkit-animation-iteration-count: 1;
+// }
+//
+// .shown {
+//   -webkit-animation: 1s;
+//   -webkit-animation-name: show;
+//   -webkit-animation-timing-function: ease-in-out;
+//   -webkit-animation-iteration-count: 1;
+// }
+
+@-webkit-keyframes hide {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(43px);
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    -webkit-transform: translateY(-43px);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+
 
 // Media Queries
 
@@ -194,7 +252,7 @@ button.remove {
   html {
     overflow: hidden;
   }
-  div.navbar > a {
+  div > a {
     padding: 10px auto;
   }
   div.body {

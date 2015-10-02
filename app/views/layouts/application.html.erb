@@ -33,16 +33,16 @@
 <body>
   <span id="title"><a href="/">Happening.Now</a></span>
 
-  <div class="navbar">
+  <div id="navbar" class="showNav">
     <%= link_to "Happening Now!", '/' %>
     <% if current_user %>
       <%= link_to "New Happening", '/users/profile' %>
       <%= link_to "Manage", '/users/profile' %>
       <%= link_to "Log Out", '/sessions', method: :delete %>
     <% else %>
-      <%= link_to "Login", login_path, id: 'login-button' %>
-      <%= link_to "Sign Up", new_user_path, id: 'signup-button' %>
-      <div id="login-form">
+      <%= link_to "Login", '/', id: 'login-button' %>
+      <%= link_to "Sign Up", '/', id: 'signup-button' %>
+      <div id="login-form" class="hidden">
         <%= form_tag '/sessions', class: "login", method: :post do %>
           <%= label_tag :username %>
           <%= text_field_tag :username %>
@@ -51,7 +51,7 @@
           <%= submit_tag "Log In" %>
         <% end %>
       </div>
-      <div id="signup-form">
+      <div id="signup-form" class="hidden">
         <%= form_for @user do |f| %>
           <%= f.label :username %>
           <%= f.text_field :username %>
